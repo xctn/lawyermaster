@@ -1,0 +1,120 @@
+{
+  "login": {
+    "user_name": "1",
+    "password": "13124",
+    "status": "1"
+  },
+  "register": {
+    "status": "1",
+    "message": "2131"
+  },
+  "loadCustomer": {
+    "status": "1",
+    "data": 
+    [
+      {
+        "customername": "张三",
+        "caseid": "1",
+        "lawyername": "刘帆",
+        "tel": "13526451236",
+        "address": "哈尔滨工业大学威海"
+      }, {
+        "customername": "张三",
+        "caseid": "2",
+        "lawyername": "刘帆",
+        "tel": "13526451236",
+        "address": "哈尔滨工业大学威海"
+      }, {
+        "customername": "张三",
+        "caseid": "3",
+        "lawyername": "刘帆",
+        "tel": "13526451236",
+        "address": "哈尔滨工业大学威海"
+      }, {
+        "customername": "张三",
+        "caseid": "3",
+        "lawyername": "老雷",
+        "tel": "13526451236",
+        "address": "哈尔滨工业大学威海"
+      }
+    ]
+  },
+  "loadCase": {
+    "status": "1",
+    "data": 
+    [
+      {
+        "cost": "3000",
+        "casetype": "案件类型",
+        "info": "无",
+        "wtime": "2018-05-16",
+        "finish": "否",
+        "caseid": "100",
+        "lawyername": "刘帆"
+      }
+    ]
+  },
+  "loadLawyer": {
+    "status": "1",
+    "data": 
+    [
+      {
+        "username": "liufan",
+        "password": "1234",
+        "lawyername": "白春光",
+        "type": "1",
+        "tel": "18463102055",
+        "idcard": "420502199403081319",
+        "age": "23",
+        "position": "3",
+        "sex": "male"
+      },
+      {
+        "username": "liufan",
+        "password": "1234",
+        "lawyername": "刘帆",
+        "type": "1",
+        "tel": "18463102055",
+        "idcard": "420502199403081319",
+        "age": "23",
+        "position": "3",
+        "sex": "male"
+      },
+      {
+        "username": "liufan",
+        "password": "1234",
+        "lawyername": "刘帆",
+        "type": "1",
+        "tel": "18463102055",
+        "idcard": "420502199403081319",
+        "age": "23",
+        "position": "3",
+        "sex": "male"
+      }
+    ]
+  },
+  "addLawyer": {
+    "status": "1",
+    "message": "21313"
+  },
+  "addCustomer": {
+    "status": "1",
+    "message": "12313"
+  },
+  "addCase": {
+    "status": "1",
+    "message": "2131231"
+  },
+  "updateLawyer": {
+    "status": "1",
+    "message": "1231"
+  },
+  "updateCustomer": {
+    "status": "1",
+    "message": "123123"
+  },
+  "updateCase": {
+    "status": "1",
+    "message": "231231"
+  }
+}
