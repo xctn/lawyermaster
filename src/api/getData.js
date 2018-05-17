@@ -17,9 +17,11 @@ export const register = data => fetch('/register', data, 'GET');
 export const loadLawyer = () => fetch('loadLawyer', 'GET');
 export const loadCustomer = () => fetch('loadCustomer', 'GET');
 export const loadCase = () => fetch('loadCase', 'GET');
-export const addLawyer = data => fetch('/addLawyer', data, 'GET')
-export const addCustomer = data => fetch('/addCustomer', data, 'GET')
-export const addCase = data => fetch('/addCase', data, 'GET')
-export const updateLawyer =data => fetch('/updateLawyer', data, 'GET')
-export const updateCustomer =data => fetch('/updateCustomer', data, 'GET')
-export const updateCase =data => fetch('/updateCase', data, 'GET')
+export const addLawyer = data => fetch('/addLawyer', data, 'GET');
+export const addCustomer = data => fetch('/addCustomer', data, 'GET');
+export const addCase = data => fetch('/addCase', data, 'GET');
+export const updateLawyer =data => fetch('/updateLawyer', data, 'GET');
+export const updateCustomer =data => fetch('/updateCustomer', data, 'GET');
+export const updateCase =data => fetch('/updateCase', data, 'GET');
+
+export const deleteLawyer = data => fetch('/deleteLawyer' ,data, 'GET');

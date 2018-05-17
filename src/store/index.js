@@ -50,6 +50,7 @@ const actions = {
 		}
 	},
 	async getLawyerData({commit}){
+		state.lawyerInfo = [];
 		try{
 			const res = await loadLawyer();
 			if (res.status === '1') {
