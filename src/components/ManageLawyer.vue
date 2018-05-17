@@ -216,6 +216,7 @@
             message: res.message
           });
         }
+        location.reload();
       },
 
       async searchLawyer(){
