@@ -116,5 +116,10 @@
   "updateCase": {
     "status": "1",
     "message": "231231"
+  },
+
+  "deleteLawyer": {
+    "status": "1",
+    "message": "123123"
   }
 }

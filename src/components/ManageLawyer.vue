@@ -2,10 +2,10 @@
 <div>
     <el-row>
             <el-col :span="3" class="grid">
-                <el-input v-model="input" placeholder="请输入内容" ></el-input>
+                <el-input v-model="searchInput" placeholder="请输入内容" ></el-input>
             </el-col>
             <el-col :span="1" class="grid">
-                <el-button type="success" icon="el-icon-search" >搜索</el-button>
+                <el-button @click="searchLawyer()" type="success" icon="el-icon-search" >搜索</el-button>
             </el-col>
         </el-row>
         <br>
@@ -64,7 +64,7 @@
       width="100">
       <template slot-scope="scope">
         <el-button @click="handleClick(scope.row)" type="text" size="small">修改</el-button>
-        <el-button type="text" size="small">删除</el-button>
+        <el-button @click="handleDelete(scope.row)" type="text" size="small">删除</el-button>
       </template>
     </el-table-column>
   </el-table>
@@ -116,18 +116,33 @@
 				  </el-form>
 						  
 				  </el-dialog>
+
+  <el-dialog 
+  title="警告"
+  :visible.sync="dialogVisible"
+  width="30%"
+  :before-close="handleClose">
+    <span>确认删除？</span>
+    <span slot="footer" class="dialog-footer">
+      <el-button @click="dialogVisible = false">取 消</el-button>
+      <el-button type="primary" @click="deleteLawyer()">确 定</el-button>
+    </span>
+  </el-dialog>
+
 </div>
 </template>
 
 <script>
-  import {login, getAdminInfo, register, loadLawyer, updateLawyer} from '@/api/getData'
+  import {login, getAdminInfo, register, loadLawyer, updateLawyer, deleteLawyer} from '@/api/getData'
 	import {mapActions, mapState} from 'vuex'
   export default {
-    created() {
+    mounted() {
       this.getLawyerData();
+      this.tableData = [];
       this.tableData = this.lawyerInfo;
       console.log(this.tableData);
     },
+
     computed: {
       ...mapState(['lawyerInfo']),
     },
@@ -147,6 +162,11 @@
         console.log();
         
       },
+      handleDelete(row) {
+        this.dialogVisible = true;
+        this.deleteName = row.username;
+      },
+
       async signIn(formName) {
 				this.$refs[formName].validate(async (valid) => {
 
@@ -180,12 +200,53 @@
 					}
 				});
         
+      },
+
+      async deleteLawyer() {
+        this.dialogVisible = false;
+        const res = await deleteLawyer({username: this.deleteName})
+        if(res.status == 1) {
+          this.$message({
+            type: 'success',
+            message: '删除成功'
+          });
+        }else{
+          this.$message({
+            type: 'error',
+            message: res.message
+          });
+        }
+      },
+
+      async searchLawyer(){
+        var input = this.searchInput;
+
+        if (this.searchInput == "") {
+          this.tableData = this.lawyerInfo;
+          return;
+        }
+
+        var searchResult = [];
+
+        for(var i=0; i<this.tableData.length; i++){
+          if(this.tableData[i].lawyername == input){
+            searchResult[0] = this.tableData[i];
+            this.tableData = searchResult;
+            return;
+          }
+        }
+
+        this.$message({
+            type: 'error',
+            message: '未找到！'
+        });
       }
+
     },
 
     data() {
       return {
-        input: '',
+        searchInput: "",
         dialogFormVisible: false,
         formLabelWidth: '100px',
         tableData: [],
@@ -203,7 +264,9 @@
           			    type: [],
          			      resource: '',
           			    desc: ''
-                }
+                },
+        dialogVisible: false,
+        deleteName: ''
       }
     }
   }
