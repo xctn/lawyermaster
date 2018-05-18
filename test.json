@@ -10,27 +10,29 @@
   },
   "loadCustomer": {
     "status": "1",
-    "data": 
-    [
+    "data": [
       {
         "customername": "张三",
         "caseid": "1",
         "lawyername": "刘帆",
         "tel": "13526451236",
         "address": "哈尔滨工业大学威海"
-      }, {
+      },
+      {
         "customername": "张三",
         "caseid": "2",
         "lawyername": "刘帆",
         "tel": "13526451236",
         "address": "哈尔滨工业大学威海"
-      }, {
+      },
+      {
         "customername": "张三",
         "caseid": "3",
         "lawyername": "刘帆",
         "tel": "13526451236",
         "address": "哈尔滨工业大学威海"
-      }, {
+      },
+      {
         "customername": "张三",
         "caseid": "3",
         "lawyername": "老雷",
@@ -41,8 +43,7 @@
   },
   "loadCase": {
     "status": "1",
-    "data": 
-    [
+    "data": [
       {
         "cost": "3000",
         "casetype": "案件类型",
@@ -56,8 +57,7 @@
   },
   "loadLawyer": {
     "status": "1",
-    "data": 
-    [
+    "data": [
       {
         "username": "liufan",
         "password": "1234",

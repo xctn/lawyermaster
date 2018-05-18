@@ -15,9 +15,9 @@
 </template>
 
 <script>
-	import {signout} from '@/api/getData'
-	import {baseImgPath} from '@/config/env'
-	import {mapActions, mapState} from 'vuex'
+	// import {signout} from '@/api/getData'
+	// import {baseImgPath} from '@/config/env'
+	// import {mapActions, mapState} from 'vuex'
 	import imgURL from './../assets/img/avator.jpg'
 
     export default {
@@ -32,10 +32,10 @@
     		}
     	},
     	computed: {
-    		...mapState(['adminInfo']),
+    		// ...mapState(['adminInfo']),
     	},
 		methods: {
-			...mapActions(['getAdminData']),
+			// ...mapActions(['getAdminData']),
 			async handleCommand(command) {
 				if (command == 'home') {
 					this.$router.push('/Manage');

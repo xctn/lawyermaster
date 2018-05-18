@@ -29,7 +29,7 @@ export default new Router({
       component: Manage,
       children: [
       {
-        path: '/ManageLawyer',
+        path: '',
         component: ManageLawyer,
         meta: []
       },

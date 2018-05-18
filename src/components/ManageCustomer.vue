@@ -82,18 +82,18 @@
 </template>
 
 <script>
- import {login, getAdminInfo, register, updateLawyer, updateCustomer, loadCustomer} from '@/api/getData'
-	import {mapActions, mapState} from 'vuex'
+//  import {login, getAdminInfo, register, updateLawyer, updateCustomer, loadCustomer} from '@/api/getData'
+// 	import {mapActions, mapState} from 'vuex'
   export default {
     created() {
       this.getCustomerData();
       this.tableData = this.customerInfo;
     },
     computed: {
-      ...mapState(['customerInfo']),
+      // ...mapState(['customerInfo']),
     },
     methods: {
-      ...mapActions(['getCustomerData']),
+      // ...mapActions(['getCustomerData']),
       handleClick(row) {
         this.dialogFormVisible = true;
         this.regform.customername = row.customername
