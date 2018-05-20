@@ -30,8 +30,8 @@
 </template>
 
 <script>
-import {login, getAdminInfo, register,addLawyer,addCustomer} from '@/api/getData'
-import {mapActions, mapState} from 'vuex'
+// import {login, getAdminInfo, register,addLawyer,addCustomer} from '@/api/getData'
+// import {mapActions, mapState} from 'vuex'
   export default {
     data() {
       return {
@@ -51,21 +51,21 @@ import {mapActions, mapState} from 'vuex'
 				this.$refs[formName].validate(async (valid) => {
 
 					if (valid) {
-						const res = await addCustomer({customername: this.regform.customername, caseid: this.regform.caseid, tel: this.regform.tel, address: this.regform.address, lawyername: this.regform.lawyername})
+						// const res = await addCustomer({customername: this.regform.customername, caseid: this.regform.caseid, tel: this.regform.tel, address: this.regform.address, lawyername: this.regform.lawyername})
 						if (res.status == 1) {
 
-							this.$message({
-		                        type: 'success',
-								            message: '添加成功'
-                            });
-                            this.dialogFormVisible=false
-                            this.$router.push('Manage')
+							// this.$message({
+		          //               type: 'success',
+							// 	            message: '添加成功'
+              //               });
+              //               this.dialogFormVisible=false
+              //               this.$router.push('Manage')
                                  }
             else{
-							this.$message({
-		                        type: 'error',
-		                        message: res.message
-		                    });
+							// this.$message({
+		          //               type: 'error',
+		          //               message: res.message
+		          //           });
 						}
 					} else {
 						this.$notify.error({

@@ -46,8 +46,8 @@
 </template>
 
 <script>
-import {login, getAdminInfo, register,addLawyer} from '@/api/getData'
-import {mapActions, mapState} from 'vuex'
+// import {login, getAdminInfo, register,addLawyer} from '@/api/getData'
+// import {mapActions, mapState} from 'vuex'
   export default {
     data() {
       return {

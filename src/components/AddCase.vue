@@ -50,8 +50,8 @@
 </template>
 
 <script>
-import {login, getAdminInfo, register,addLawyer,addCustomer,addCase} from '@/api/getData'
-import {mapActions, mapState} from 'vuex'
+// import {login, getAdminInfo, register,addLawyer,addCustomer,addCase} from '@/api/getData'
+// import {mapActions, mapState} from 'vuex'
   export default {
     data() {
       return {

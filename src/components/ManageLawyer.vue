@@ -120,69 +120,9 @@
 </template>
 
 <script>
-  import {login, getAdminInfo, register, loadLawyer, updateLawyer} from '@/api/getData'
-	import {mapActions, mapState} from 'vuex'
+  // import {login, getAdminInfo, register, loadLawyer, updateLawyer} from '@/api/getData'
+	// import {mapActions, mapState} from 'vuex'
   export default {
-    created() {
-      this.getLawyerData();
-      this.tableData = this.lawyerInfo;
-      console.log(this.tableData);
-    },
-    computed: {
-      ...mapState(['lawyerInfo']),
-    },
-    methods: {
-      ...mapActions(['getLawyerData']),
-      handleClick(row) {
-        this.dialogFormVisible = true;
-        this.regform._username = row.username
-        this.regform._password = row.password
-        this.regform.idcard = row.idcard
-        this.regform.type = row.type
-        this.regform.tel = row.tel
-        this.regform.age = row.age
-        this.regform.position = row.position
-        this.regform.sex = row.sex
-        this.regform.lawyername =row.lawyername
-        console.log();
-        
-      },
-      async signIn(formName) {
-				this.$refs[formName].validate(async (valid) => {
-
-					if (valid) {
-						const res = await updateLawyer({username: this.regform._username, password: this.regform._password, lawyername: this.regform.lawyername, type: this.regform.type, tel: this.regform.tel, idcard: this.regform.idcard, age: this.regform.age, position: this.regform.position, sex: this.regform.sex})
-						if (res.status == 1) {
-
-
-							this.$message({
-		                        type: 'success',
-								            message: '更改成功'
-                            });
-                            this.dialogFormVisible=false
-                            this.$router.push('Manage')
-
-
-
-						}else{
-							this.$message({
-		                        type: 'error',
-		                        message: res.message
-		                    });
-						}
-					} else {
-						this.$notify.error({
-							title: '错误',
-							message: '请输入正确的值',
-							offset: 100
-						});
-						return false;
-					}
-				});
-        
-      }
-    },
-
     data() {
       return {
         input: '',
@@ -205,6 +145,66 @@
           			    desc: ''
                 }
       }
-    }
+    },
+    created() {
+      // // this.getLawyerData();
+      // this.tableData = this.lawyerInfo;
+      // console.log(this.tableData);
+    },
+    computed: {
+      
+    },
+    methods: {
+      // ...mapActions(['getLawyerData']),
+      handleClick(row) {
+        this.dialogFormVisible = true;
+        this.regform._username = row.username
+        this.regform._password = row.password
+        this.regform.idcard = row.idcard
+        this.regform.type = row.type
+        this.regform.tel = row.tel
+        this.regform.age = row.age
+        this.regform.position = row.position
+        this.regform.sex = row.sex
+        this.regform.lawyername =row.lawyername
+        console.log();
+        
+      },
+      async signIn(formName) {
+				this.$refs[formName].validate(async (valid) => {
+
+					if (valid) {
+						// const res = await updateLawyer({username: this.regform._username, password: this.regform._password, lawyername: this.regform.lawyername, type: this.regform.type, tel: this.regform.tel, idcard: this.regform.idcard, age: this.regform.age, position: this.regform.position, sex: this.regform.sex})
+						if (1 == 1) {
+
+
+							// this.$message({
+		          //               type: 'success',
+							// 	            message: '更改成功'
+              //               });
+              //               this.dialogFormVisible=false
+              //               this.$router.push('Manage')
+
+
+
+						}else{
+							// this.$message({
+		          //               type: 'error',
+		          //               message: res.message
+		          //           });
+						}
+					} else {
+						this.$notify.error({
+							title: '错误',
+							message: '请输入正确的值',
+							offset: 100
+						});
+						return false;
+					}
+				});
+        
+      }
+    },
+
   }
 </script>
